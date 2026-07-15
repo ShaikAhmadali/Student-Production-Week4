@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Management System</h2>
+
+    <h3>Create Account</h3>
+    {% if error %}
+<p style="color:red;">
+    {{ error }}
+</p>
+{% endif %}
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Choose Username"
+            required>
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Choose Password"
+            required>
+
+        <button type="submit">
+            Signup
+        </button>
+
+    </form>
+
+    <p>
+        Already have an account?
+        <a href="/login">Login</a>
+    </p>
+
+</div>
+
+</body>
+</html>
